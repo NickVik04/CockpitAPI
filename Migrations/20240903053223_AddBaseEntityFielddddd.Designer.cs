@@ -3,6 +3,7 @@ using System;
 using IdentityApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IdentityApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240903053223_AddBaseEntityFielddddd")]
+    partial class AddBaseEntityFielddddd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,19 +38,9 @@ namespace IdentityApi.Migrations
                     b.Property<int>("Code")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("EmailSenderID")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("Logo")
                         .IsRequired()
@@ -66,13 +59,6 @@ namespace IdentityApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Stores")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UpdatedBy")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -209,28 +195,13 @@ namespace IdentityApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
-
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("EmailId")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("PhoneNo")
                         .IsRequired()
@@ -249,13 +220,6 @@ namespace IdentityApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Store")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UpdatedBy")
                         .IsRequired()
                         .HasColumnType("text");
 

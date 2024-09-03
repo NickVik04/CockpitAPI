@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace IdentityApi.Models
 {
-    public class BrandModel
+    public class BrandModel : BaseModel
     {
-        [Key]
-        public string Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -27,9 +25,5 @@ namespace IdentityApi.Models
         [MaxLength(21)]
         public string CIN { get; set; }
 
-        public BrandModel()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
     }
 }

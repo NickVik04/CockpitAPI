@@ -7,11 +7,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace IdentityApi.Models
 {
-    public class UserModel
+    public class UserModel : BaseModel
     {
-        [Key]
-        public string Id { get; set; }
-
         [Required]
         public string UserName { get; set; }
 
@@ -41,10 +38,5 @@ namespace IdentityApi.Models
 
         public string Status { get; set; }
 
-        public UserModel()
-    {
-        // Automatically generate a unique ID for new users
-        Id = Guid.NewGuid().ToString();
-    }
     }
 }

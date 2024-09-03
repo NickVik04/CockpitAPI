@@ -117,3 +117,4 @@
 /home/nikhil.sharma@corp.easyrewardz.com/Desktop/IdentityApi/obj/Debug/net8.0/IdentityApi.pdb
 /home/nikhil.sharma@corp.easyrewardz.com/Desktop/IdentityApi/obj/Debug/net8.0/IdentityApi.genruntimeconfig.cache
 /home/nikhil.sharma@corp.easyrewardz.com/Desktop/IdentityApi/obj/Debug/net8.0/ref/IdentityApi.dll
+/home/nikhil.sharma@corp.easyrewardz.com/Desktop/IdentityApi/obj/Debug/net8.0/IdentityApi.sourcelink.json
