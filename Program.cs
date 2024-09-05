@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using IdentityApi.Interfaces;
 using IdentityApi.Services;
 using IdentityApi.Models;
+using IdentityApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,12 +55,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<IBrandService, BrandService>(); // Register your service
-
-builder.Services.AddLogging(); // Ensure logging is added
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IBrandService, BrandService>();
-builder.Services.AddScoped<IStoreService, StoreService>();
+builder.Services.RegisterServices();
 
 // Add JWT authentication
 builder.Services.AddAuthentication(options =>
@@ -94,7 +90,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthorization(); 
 app.MapControllers();
 app.UseHttpsRedirection();
 

@@ -22,6 +22,7 @@ namespace IdentityApi.Data
         public DbSet<BrandModel> Brands { get; set; }
         public DbSet<StoreModel> Stores { get; set; }
         public DbSet<CurrencyModel> Currency { get; set; }
+        public DbSet<CountryModel> Country { get; set; }
 
         public override int SaveChanges()
         {

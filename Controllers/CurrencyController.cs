@@ -5,11 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using IdentityApi.Interfaces;
 using IdentityApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace IdentityApi.Controllers
-{
+{   
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class CurrencyController : ControllerBase
