@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace IdentityApi.Models
 {
@@ -32,6 +33,18 @@ namespace IdentityApi.Models
 
         public BaseModel(){
             Id = Guid.NewGuid().ToString();
+             Code = GenerateUniqueCode();
         }
+
+        private string GenerateUniqueCode()
+    {
+        // Generate a random alphanumeric string (length 10 in this case)
+        var random = new Random();
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var uniqueCode = new string(Enumerable.Repeat(chars, 10)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
+
+        return uniqueCode;
+    }
     }
 }
