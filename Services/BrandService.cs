@@ -100,7 +100,7 @@ namespace IdentityApi.Services
                 brand.Name = brandModel.Name;
                 brand.Logo = brandModel.Logo;
                 brand.Stores = brandModel.Stores;
-                brand.Code = brandModel.Code;
+                brand.BrandCode = brandModel.BrandCode;
                 brand.Url = brandModel.Url;
                 brand.SMSSenderID = brandModel.SMSSenderID;
                 brand.EmailSenderID = brandModel.EmailSenderID;

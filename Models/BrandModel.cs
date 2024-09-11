@@ -14,7 +14,7 @@ namespace IdentityApi.Models
         public string Logo { get; set; }
         public string Stores { get; set; }
         [Required]
-        public int Code { get; set; }
+        public int BrandCode { get; set; }
         [Required]
         [Url]
         public string Url { get; set; }
