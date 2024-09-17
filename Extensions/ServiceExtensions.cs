@@ -19,6 +19,8 @@ namespace IdentityApi.Extensions
             services.AddScoped<ICountryService, CountryService>();
             services.AddScoped<ILanguageService, LanguageService>();
             services.AddScoped<IChannelService, ChannelService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IRoleService, RoleService>();
         }
     }
 }

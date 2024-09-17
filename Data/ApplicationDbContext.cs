@@ -25,6 +25,9 @@ namespace IdentityApi.Data
         public DbSet<CountryModel> Country { get; set; }
         public DbSet<LanguageModel> Language { get; set; }
         public DbSet<ChannelModel> Channel {get; set;}
+
+        public DbSet<ApplicationModel> Application { get; set; }
+        public DbSet<RoleModel> Role { get; set; }
         public override int SaveChanges()
         {
             UpdateTimestamps();
