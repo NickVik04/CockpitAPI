@@ -21,7 +21,7 @@ namespace IdentityApi.Extensions
             services.AddScoped<IChannelService, ChannelService>();
             services.AddScoped<IApplicationService, ApplicationService>();
             services.AddScoped<IRoleService, RoleService>();
-            services.AddScoped<IRoleMappingService, RoleMappingService>();
+           // services.AddScoped<IRoleMappingService, RoleMappingService>();
         }
     }
 }
