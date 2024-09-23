@@ -262,7 +262,7 @@ namespace IdentityApi.Services
                 var applications = await _context.Application.ToListAsync();
                 var roles = await _context.Role.ToListAsync();
 
-                var result = from trns in roleMappings
+                var result = from trns in roleMappings 
                              join u in users on trns.UserID equals u.Id
                              join st in applications on trns.ApplicationID equals st.Id
                              select new
