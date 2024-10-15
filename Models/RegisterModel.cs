@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace IdentityApi.Models
 {
-  public class RegisterModel
+  public class RegisterModel : BaseModel
 {
     public string Username { get; set; }
     public string Email { get; set; }

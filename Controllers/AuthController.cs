@@ -67,7 +67,10 @@ public class AuthController : ControllerBase
         };
         var result = await _userManager.CreateAsync(user, model.Password);
         if (!result.Succeeded)
-            return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+        {
+            var errors = result.Errors.Select(e => e.Description).ToList();
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User creation failed! Please check user details and try again.", Errors = errors });
+        }
 
         return Ok(new { Status = "Success", Message = "User created successfully!" });
     }
